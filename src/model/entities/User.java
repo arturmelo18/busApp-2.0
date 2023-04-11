@@ -5,10 +5,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
-import model.exception.UserException;
-
 public class User {
 
+	private Integer id;
 	private String name;
 	private String email;
 	private Integer password;
@@ -17,10 +16,19 @@ public class User {
 
 	List<User> users = new ArrayList<>();
 
-	public User(String name, String email, Integer password) {
+	public User(Integer id, String name, String email, Integer password) {
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -28,14 +36,6 @@ public class User {
 	}
 
 	public void setName(String name) {
-		System.out.println("Speak your password");
-		int p = sc.nextInt();
-		User u = new User(null, null, p);
-		if (getPassword().hashCode() != u.getPassword().hashCode()) {
-			throw new UserException("Passwords do not match");
-		} else {
-			this.name = name;
-		}
 	}
 
 	public String getEmail() {
@@ -43,14 +43,7 @@ public class User {
 	}
 
 	public void setEmail(String email) {
-		System.out.println("Speak your password");
-		int p = sc.nextInt();
-		User u = new User(null, null, p);
-		if (getPassword().hashCode() != u.getPassword().hashCode()) {
-			throw new UserException("Passwords do not match");
-		} else {
-			this.email = email;
-		}
+
 	}
 
 	public Integer getPassword() {
@@ -58,14 +51,6 @@ public class User {
 	}
 
 	public void setPassword(Integer password) {
-		System.out.println("Speak your password");
-		int p = sc.nextInt();
-		User u = new User(null, null, p);
-		if (getPassword().hashCode() != u.getPassword().hashCode()) {
-			throw new UserException("Passwords do not match");
-		} else {
-			this.password = password;
-		}
 	}
 
 	public List<User> getUsers() {
