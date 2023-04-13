@@ -1,9 +1,6 @@
 package model.entities;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class User {
 
@@ -11,11 +8,7 @@ public class User {
 	private String name;
 	private String email;
 	private Integer password;
-
-	Scanner sc = new Scanner(System.in);
-
-	List<User> users = new ArrayList<>();
-
+	
 	public User(Integer id, String name, String email, Integer password) {
 		this.id = id;
 		this.name = name;
@@ -36,6 +29,7 @@ public class User {
 	}
 
 	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -43,7 +37,7 @@ public class User {
 	}
 
 	public void setEmail(String email) {
-
+		this.email = email;
 	}
 
 	public Integer getPassword() {
@@ -51,10 +45,7 @@ public class User {
 	}
 
 	public void setPassword(Integer password) {
-	}
-
-	public List<User> getUsers() {
-		return users;
+		this.password = password;
 	}
 
 	@Override
