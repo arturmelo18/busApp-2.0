@@ -1,14 +1,22 @@
 package model.entities;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Objects;
 
+import db.DB;
+
 public class User {
+
+	Connection conn = null;
+	PreparedStatement pst = null;
 
 	private Integer id;
 	private String name;
 	private String email;
 	private Integer password;
-	
+
 	public User(Integer id, String name, String email, Integer password) {
 		this.id = id;
 		this.name = name;
